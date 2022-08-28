@@ -15,11 +15,21 @@
 
 **接入方式**
 
-在gradle中加入：
+Add it in your root build.gradle at the end of repositories:
 ```
-compile 'jackmego.com.jieba_android:jieba_android-release:0.1.0'
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
 ```
-
+Step 2. Add the dependency
+```
+	dependencies {
+	        implementation 'com.github.dujianchi:jieba-android:androidx'
+	}
+```
 在proguard-rules中添加下面的混淆规则：
 ```
 -keep class jackmego.com.jieba_android.RequestCallback { *; }
